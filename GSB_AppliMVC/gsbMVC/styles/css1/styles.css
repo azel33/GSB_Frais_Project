@@ -33,7 +33,7 @@ body{
 	border-collapse: separate;
 }
 #menuGauche {
-	margin-top : 0.10em;
+	margin-top : 0.8sem;
 	background-color: white;
 	color: rgb(0,85,227);
 	float: left;
@@ -45,7 +45,6 @@ body{
 	padding: 1.3em;
 	background-color: white;
 	border-left :  groove 0.8em #980101;
-  margin-top : 1.2em;
 	margin-left: 18%;
 /* permet de fixer une hauteur mini sur les navigateurs modernes */
   min-height:27em;

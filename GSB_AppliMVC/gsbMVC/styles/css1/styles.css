@@ -33,7 +33,7 @@ body{
 	border-collapse: separate;
 }
 #menuGauche {
-	margin-top : 0.2em;
+	margin-top : 0.10em;
 	background-color: white;
 	color: rgb(0,85,227);
 	float: left;

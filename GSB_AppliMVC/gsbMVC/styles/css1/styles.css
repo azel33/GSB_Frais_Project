@@ -34,15 +34,15 @@ body{
 }
 #menuGauche {
 	margin-top : 0.8sem;
-	background-color: white;
+	background-color: black;
 	color: rgb(0,85,227);
 	float: left;
 	width: 18%;
+	
 }
 
 #contenu{
 	border: none;
-	margin-top : -5px ;
 	padding: 1.3em;
 	background-color: white;
 	border-left :  groove 0.8em #980101;

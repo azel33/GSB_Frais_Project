@@ -1,6 +1,6 @@
 ﻿<div id="contenu">
 <table class="listeLegere">
-  	   <caption>Descriptif des Elements hors forfait
+  	   <h3>Descriptif des Elements hors forfait</h3>
        </caption>
              <tr>
                 <th class="date">Date</th>

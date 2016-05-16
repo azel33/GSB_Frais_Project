@@ -1,6 +1,5 @@
 <div id="contenu">
       <h2>Selectionner un visiteur et un mois</h2>
-      <h3>Visiteurs a selectionner </h3>
 	  <form method="post" action="index.php?uc=validerFrais&action=selectionnerMois">
 	  <div class="corpsForm">
 	  
@@ -32,11 +31,11 @@
 	  	?>
 	   </select> 
 	  </p>
-	  </div>
       <div class="piedForm">
       <p>
         <input id="ok" type="submit" value="Valider" size="20" />
       </p> 
+      </div>
       </div>
       </form>
 </div>

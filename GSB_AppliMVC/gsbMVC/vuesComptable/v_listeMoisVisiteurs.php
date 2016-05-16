@@ -2,9 +2,8 @@
 
 <div id="contenu">
       <h2>Selectionner un visiteur et un mois :</h2>
-      <div class="corpsForm">
 	  <form method="post" action="index.php?uc=validerFrais&action=selectionnerMois">
-	  
+	  <div class="corpsForm">
 	  <!-- Listes des noms des visiteurs --> 
 
 	  <p>
@@ -51,10 +50,12 @@
         <input id="ok" type="submit" value="Valider" size="20" />
       </p> 
       </div>
-      </form>
+     </div>
+    </form>
       
       <!-- Liste des mois pour lesquels un visiteur a une fiche de frais --> 
 	  <form method="post" action="index.php?uc=validerFrais&action=selectionnerMois">
+	  <div class="corpsForm">
 	  <p>
         <label for="lstMois" accesskey="n">Mois : </label>
         <select id="lstMois" name="lstMois">
@@ -84,9 +85,9 @@
       <p>
         <input id="ok" type="submit" value="Valider" size="20" />
       </p> 
+       </div>
       </div>
      </form>
     </div>
-</div>
 
 

@@ -1,7 +1,12 @@
 <?php
 include("vuesComptable/v_sommaireComptable.php");
-$action = $_REQUEST['action'];
 $idComptable = $_SESSION['idSalarie'];
+if(!isset($_REQUEST['action'])){
+	$_REQUEST['action'] = 'demandeConnexion';
+}
+$action = $_REQUEST['action'];
+
+// Selon les valeurs de $_REQUEST['action'] inclusion des différents vues
 	switch($action) {
 	
 		case 'selectionnerVisiteur' :

@@ -3,11 +3,11 @@ en etat VA ou MP -->
 
 <div id="contenu">
 <h2>Selectionner un mois et un visiteur disponible :</h2>
-<div class="corpsForm">
 
 <!-- Liste des mois pour lesquels il y a une fiche de frais en etat VA ou MP -->
 
 <form method="post" action="index.php?uc=suivreFrais&action=selectionnerVisiteur">
+<div class="corpsForm">
 <p>
 <label for="lstMois" accesskey="n">Mois : </label>
 	<select id="lstMois" name="lstMois">
@@ -38,11 +38,13 @@ en etat VA ou MP -->
         <input id="ok" type="submit" value="Valider" size="20" />
       </p> 
       </div>
+     </div>
      </form>
      
   <!-- Liste des visiteurs pour lesquels il y a une fiche de frais en etat VA ou MP -->
      
 	  <form method="post" action="index.php?uc=suivreFrais&action=actualiserFicheFrais">
+	  <div class="corpsForm">
 	  
 	  <p>
 	  <label for="nomVisiteur">Nom et Prenom du visiteur :</label>
@@ -74,6 +76,6 @@ en etat VA ou MP -->
         <input id="ok" type="submit" value="Valider" size="20" />
       </p> 
       </div>
+      </div>
       </form>
-    </div>
 </div>

@@ -1,6 +1,5 @@
 ﻿
     <!-- Division pour le sommaire -->
-    <div class="encadre">
     <div id="menuGauche">
      <div id="infosUtil">
     
@@ -26,6 +25,5 @@
          </ul>
         
     </div>
- </div>
 
     

@@ -33,7 +33,7 @@ body{
 	border-collapse: separate;
 }
 #menuGauche {
-	margin-top : 0.8em;
+	margin-top : 0.2em;
 	background-color: white;
 	color: rgb(0,85,227);
 	float: left;
@@ -64,7 +64,7 @@ html>body #contenu{
 ul#menuList{
     list-style:none;
     margin:0px;
-    padding:15px;
+    padding:0px;
     width:98%;
     font-size: 1em;
 }

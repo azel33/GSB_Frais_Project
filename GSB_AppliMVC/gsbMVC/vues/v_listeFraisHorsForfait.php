@@ -1,7 +1,6 @@
 ﻿<div id="contenu">
+<h3>Descriptif des Elements hors forfait</h3>
 <table class="listeLegere">
-  	   <h3>Descriptif des Elements hors forfait</h3>
-       </caption>
              <tr>
                 <th class="date">Date</th>
 				<th class="libelle">Libelle</th>  
@@ -27,8 +26,7 @@
 	<?php		 
           
           }
-	?>	  
-                                          
+	?>	                                     
     </table>
       <form action="index.php?uc=gererFrais&action=validerCreationFrais" method="post">
       <div class="corpsForm">

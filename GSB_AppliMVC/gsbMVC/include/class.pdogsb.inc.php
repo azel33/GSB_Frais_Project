@@ -49,8 +49,8 @@ class PdoGsb{
 /**
  * Retourne les informations d'un visiteur
  
- * @param $login 
- * @param $mdp
+ * @param  $login 
+ * @param  $mdp
  * @return l'id, le nom, le prenom et le profil sous la forme d'un tableau associatif 
 */
 	public function getInfosSalarie($login, $mdp){
@@ -162,7 +162,9 @@ class PdoGsb{
 	
 /**
  * Retourne l'id Etat d'une fiche de frais
-	
+ 
+ * @param $idVisiteur 
+ * @param $mois sous la forme aaaamm
  * @return l'etat de la fiche de frais
  */
 	public function getEtatFrais($idVisiteur,$mois){
@@ -455,8 +457,7 @@ class PdoGsb{
 * Retourne le nom et prenom des visiteur qui ont une fiche de frais pour un mois donnée
 * et lorsque ca fiche frais est dans un état de mise en paiement et ou dans un etat validé.
 
-* @param $nomVisiteur
-* @param $PrenomVisiteur
+* @param $mois
 * @return l'id d'un visiteur
 */
 	public function getNomVisiteursEtat($mois ){

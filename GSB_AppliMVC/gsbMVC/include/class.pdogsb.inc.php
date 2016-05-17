@@ -17,7 +17,7 @@
 
 class PdoGsb{   		
 		private static $serveur='mysql:host=localhost';
-		private static $bdd='dbname=gsb_frais';
+		private static $bdd='dbname=projetgswrmartin';
 		private static $user='root' ;
 		private static $mdp='' ;
 		private static $monPdo;
@@ -109,8 +109,8 @@ class PdoGsb{
 * @return le montant  de frais hors forfait
 */
 	public function getMontantTotalFraisHorsForfait($mois,$idVisiteur) {
-	$req = "Select sum(LigneFraisHorsForfait.montant)as montantMois from LigneFraisHorsForfait
-	where LigneFraisHorsForfait.StatutLigneFraisHorsForfait is NULL  
+	$req = "Select sum(lignefraishorsforfait.montant)as montantMois from lignefraishorsforfait
+	where lignefraishorsforfait.statut is NULL  
 	and lignefraishorsforfait.idvisiteur ='$idVisiteur' and lignefraishorsforfait.mois = '$mois'" ;
 	$res = PdoGsb::$monPdo->query($req);
 	$laLigne = $res->fetch();
@@ -294,8 +294,8 @@ class PdoGsb{
 * @return un libelle
 */
 	public function getLibelleFraisHorsForfait($idFrais){
-		$req = "Select LigneFraisHorsForfait.libelle from LigneFraisHorsForfait
-		where LigneFraisHorsForfait.id = '$idFrais'" ;
+		$req = "Select lignefraishorsforfait.libelle from lignefraishorsforfait
+		where lignefraishorsforfait.id = '$idFrais'" ;
 		$res = PdoGsb::$monPdo->query($req);
 		$laLigne = $res->fetch();
 		return $laLigne ;
@@ -309,11 +309,11 @@ class PdoGsb{
 * @param $idFrais : l'id du frais
 */
 	public function majLibelleFraisHorsForfait ($idFrais,$libelleRefuse){
-		$req = "update LigneFraisHorsForfait set LigneFraisHorsForfait.libelle = '$libelleRefuse'
-		where LigneFraisHorsForfait.id = $idFrais";
+		$req = "update lignefraishorsforfait set lignefraishorsforfait.libelle = '$libelleRefuse'
+		where lignefraishorsforfait.id = $idFrais";
 		PdoGsb::$monPdo->exec($req);
-		$req = "update LigneFraisHorsForfait set LigneFraisHorsForfait.StatutLigneFraisHorsForfait = 'Refuse'
-		where LigneFraisHorsForfait.id = $idFrais";
+		$req = "update lignefraishorsForfait set lignefraishorsforfait.statut = 'Refuse'
+		where lignefraishorsforfait.id = $idFrais";
 		PdoGsb::$monPdo->exec($req);
 		
 	}
@@ -388,8 +388,8 @@ class PdoGsb{
  * @return un tableau avec des champs de jointure entre une fiche de frais et la ligne d'état 
 */	
 	public function getLesInfosFicheFrais($idVisiteur,$mois){
-		$req = "select ficheFrais.idEtat as idEtat, ficheFrais.dateModif as dateModif, ficheFrais.nbJustificatifs as nbJustificatifs, 
-			ficheFrais.montantValide as montantValide, etat.libelle as libEtat from  fichefrais inner join Etat on ficheFrais.idEtat = Etat.id 
+		$req = "select fichefrais.idEtat as idEtat, fichefrais.dateModif as dateModif, fichefrais.nbJustificatifs as nbJustificatifs, 
+			fichefrais.montantValide as montantValide, etat.libelle as libEtat from  fichefrais inner join etat on fichefrais.idEtat = etat.id 
 			where fichefrais.idvisiteur ='$idVisiteur' and fichefrais.mois = '$mois'";
 		$res = PdoGsb::$monPdo->query($req);
 		$laLigne = $res->fetch();

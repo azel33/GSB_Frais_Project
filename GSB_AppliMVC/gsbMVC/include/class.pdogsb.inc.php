@@ -16,10 +16,10 @@
  */
 
 class PdoGsb{   		
-      	private static $serveur='mysql:host=localhost';
-      	private static $bdd='dbname=gsb_frais';   		
-      	private static $user='root' ;    		
-      	private static $mdp='' ;	
+      	private static $serveur='mysql:host=projetgswrmartin.mysql.db';
+      	private static $bdd='dbname= projetgswrmartin';   		
+      	private static $user='projetgswrmartin' ;    		
+      	private static $mdp='Ouverture33' ;	
 		private static $monPdo;
 		private static $monPdoGsb=null;
 /**
@@ -200,6 +200,7 @@ class PdoGsb{
  * met à jour le nombre de justificatifs de la table ficheFrais
  * pour le mois et le visiteur concerné
  
+ * @param $nbJustificatifs
  * @param $idVisiteur 
  * @param $mois sous la forme aaaamm
 */
@@ -418,6 +419,7 @@ class PdoGsb{
 * @param $mois sous la forme aaaamm
 * @param $etat
 * @param $montantValide
+* @param $dateModif
 */
 	
 	public function majCompletEtatFiche($idVisiteur,$mois,$etat,$montantValide,$dateModif){

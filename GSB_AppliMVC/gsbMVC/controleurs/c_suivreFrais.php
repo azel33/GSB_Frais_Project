@@ -103,3 +103,4 @@ if (isset($_SESSION['idVisiteurEtat']) && isset($_SESSION['MoisEtat'])) {
 	$etatFiche = $infosFicheFrais['idEtat'];
 	include("vuesComptable/v_etatFraisComptable.php");
 }
+?>

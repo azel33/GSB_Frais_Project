@@ -1,5 +1,6 @@
 <div id="contenu">
-      <h2>Selectionner un visiteur et un mois</h2>
+<h2>Valider fiche de frais</h2>
+	  <strong> Selectionner un visiteur et un mois : </strong>
 	  <form method="post" action="index.php?uc=validerFrais&action=selectionnerMois">
 	  <div class="corpsForm">
 	  

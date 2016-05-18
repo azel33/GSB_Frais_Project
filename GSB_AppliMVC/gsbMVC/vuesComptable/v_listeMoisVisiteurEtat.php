@@ -2,10 +2,10 @@
 en etat VA ou MP -->
 
 <div id="contenu">
-<h2>Selectionner un mois et un visiteur disponible :</h2>
+<h2>Suivre frais</h2>
 
 <!-- Liste des mois pour lesquels il y a une fiche de frais en etat VA ou MP -->
-
+<strong> Selectionner un visiteur et un mois : </strong>
 <form method="post" action="index.php?uc=suivreFrais&action=selectionnerVisiteur">
 <div class="corpsForm">
 <p>

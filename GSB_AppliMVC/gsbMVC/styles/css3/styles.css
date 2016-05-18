@@ -3,17 +3,21 @@ body{
   background-color: #77AADD;
 	background-image: url(imgs/FONDGLOBAL.jpg);
 	background-repeat: repeat-x;
-  margin:0% 0%;
+  margin-left:3%;
+  margin-right:3%;
+  
   padding : 0.6em;
   font-family:"Trebuchet MS",Verdana,Geneva,Arial,Helvetica,sans-serif;
   font-size:0.8em;
 }
 #page {
   background-color:white;
-  width : 65%;
+  width : 100%;
   margin : auto ;
   border : 0.2em solid black;
   padding : 0.1em;
+  margin-top : 0em ;
+  margin-bottom : 0em ;
 }
 #entete{
   background-color:rgb(72,198,236);
@@ -22,6 +26,8 @@ body{
 	height: 154px;
 	padding: 0em;
 	border-collapse: separate;
+	margin-top : 0em ;
+	margin-bottom : 0em ;
 }
 #pied{
   clear : both;
@@ -33,22 +39,25 @@ body{
 	border-collapse: separate;
 }
 #menuGauche {
+	height:100%;
 	background-color: white;
 	color: rgb(0,85,227);
 	float: left;
-	width: 18%;
+	width: 13%;
 	border-left : solid 0.2em #980101;
-	border-top : solid 0.2em #980101;
 	border-bottom : solid 0.2em #980101;
 	
 }
 
 #contenu{
-	border: none;
+	margin-top : 0em ;
+	margin-bottom : 0em ;
+	width: 83.7%;
 	padding: 1.3em;
 	background-color: white;
 	border-left :  groove 0.8em #980101;
-	margin-left: 21em;
+	border-right :  groove 0.8em #980101;
+	margin-left: 14.30em;
 /* permet de fixer une hauteur mini sur les navigateurs modernes */
   min-height:27em;
 /* pour obtenir le même effet sur IE, sachant que si le contenu dépasse, il
@@ -59,13 +68,13 @@ body{
 
 /* pour rétablir le mauvais effet sur les nav. modernes */
 html>body #contenu{
+ margin-top : 0em ;
+margin-bottom : 0em ;
   height:auto;
 }
 
 /* style à appliquer à la balise ul d'identifiant menulist */
 ul#menuList{
-
-	height : 100% ;
     list-style:none;
     margin:0px;
     padding:0px;
@@ -83,7 +92,6 @@ ul#menuList li {
 /* apparences des liens dans listes et sous-listes non numérotées */
 ul#menuList a {
     color:rgb(0,85,227);
-    display:block;
     text-decoration:none;
     width:100%;
 }
@@ -99,14 +107,13 @@ ul#menuList a:hover {
 }
 
 #entete h1 {
-  margin : 1em;
   margin-left:6em;
   font-size : x-large;
   text-align:center;
 }
 
 #contenu pre {
-  width:95%;
+  width:70%;
   overflow : scroll;
 }
 
@@ -133,7 +140,7 @@ ul#menuList a:hover {
   border-style : solid;
   border-color : #000;
   text-align:right ;
-  width : 95%;
+  width : 70%;
   margin-top:0em;
 }
 
@@ -149,7 +156,7 @@ ul#menuList a:hover {
 }
 	
 form {
-  margin-bottom:1em;  
+  margin-bottom:1px;  
 }
 .corpsForm legend {
   font-weight:bold;
@@ -204,7 +211,9 @@ taille de caractères légèrement supérieure à la normale */
 }
 /* Style pour les liens de la page principale */
 #contenu .corpsTexte {
-  width:80%;
+  margin-top : 0em ;
+  margin-bottom : 0em ;
+  width:100%;
   font-size:1.2em;
 }
 
@@ -251,10 +260,10 @@ taille de caractères légèrement supérieure à la normale */
 }
 
 #contenu h3 {
-    font-size : 1.2em;
+    font-size : 0em;
 }
 table.listeLegere {
-/*    width:80%;*/
+     width:95% ;
     margin-bottom : 0.5em;
 }
 
@@ -267,7 +276,7 @@ table.listeLegere th, table.listeLegere td {
 }
 
 table.listeLegere caption {
-  font-size : 1.1em;
+  font-size : 0em;
   text-align : left;
   margin-bottom : 0.3em;
 }
@@ -283,7 +292,7 @@ table.listeLegere th.date, table.listeLegere th.montant{
   color:black;
 }
 table.listeLegere th.libelle{
-  width:70%;
+  width:100%;
   color:black;
 }
 

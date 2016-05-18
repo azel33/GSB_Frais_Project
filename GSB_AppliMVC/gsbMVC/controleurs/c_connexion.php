@@ -30,8 +30,7 @@ switch($action){
 				include("vues/v_sommaireVisiteur.php");
 			} else if ($_SESSION['profil'] == 'comptable') {
 				include("vuesComptable/v_sommaireComptable.php");
-			}
-			
+			}	
 		}
 		break;
 	}

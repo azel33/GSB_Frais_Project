@@ -405,7 +405,7 @@ class PdoGsb{
  */
  
 	public function majEtatFicheFrais($idVisiteur,$mois,$etat){
-		$req = "update ficheFrais set ficheFrais.idEtat = '$etat', ficheFrais.dateModif = now() 
+		$req = "update fichefrais set fichefrais.idEtat = '$etat', fichefrais.dateModif = now() 
 		where fichefrais.idVisiteur ='$idVisiteur' and fichefrais.mois = '$mois'";
 		PdoGsb::$monPdo->exec($req);
 	}
@@ -423,7 +423,7 @@ class PdoGsb{
 */
 	
 	public function majCompletEtatFiche($idVisiteur,$mois,$etat,$montantValide,$dateModif){
-		$req = "update ficheFrais set ficheFrais.idEtat = '$etat', ficheFrais.dateModif = now(), ficheFrais.montantValide='$montantValide'
+		$req = "update fichefrais set fichefrais.idEtat = '$etat', fichefrais.dateModif = now(), fichefrais.montantValide='$montantValide'
 		where fichefrais.idVisiteur ='$idVisiteur' and fichefrais.mois = '$mois'";
 		PdoGsb::$monPdo->exec($req);
 	}

@@ -12,7 +12,7 @@ $action = $_REQUEST['action'];
 // Selon les valeurs de $_REQUEST['action'] inclusion des différents vues
 switch($action) {
 	
-	// selection du mois
+// selection du mois
 	case 'selectionnerMoisEtat' :
 		unset($_SESSION['MoisEtat']);
 		include("vuesComptable/v_listeMoisEtat.php");
@@ -27,7 +27,6 @@ switch($action) {
 		}
 		$lesNomsVisiteurs = $pdo->getNomVisiteursEtat($_SESSION['MoisEtat']);
 		include("vuesComptable/v_listeMoisVisiteurEtat.php");
-		
 		break ;
 		
 	// Affichage de la fiche frais
@@ -83,24 +82,23 @@ switch($action) {
 		$etatFiche = $infosFicheFrais['idEtat'];
 		$etat ='RB' ;
 		$pdo->majCompletEtatFiche($_SESSION['idVisiteurEtat'],$_SESSION['MoisEtat'],$etat,$montantValide,$dateModif);
-		include("vuesComptable/v_listeMoisVisiteurEtat.php");
-			
+		include("vuesComptable/v_listeMoisVisiteurEtat.php");	
 			break ;
 }
 // Récupération de la fiche  dispo pour un visiteur et un mois donné.
-if (isset($_SESSION['idVisiteurEtat']) && isset($_SESSION['MoisEtat'])) {
-	$infosFicheFrais = $pdo->getLesInfosFicheFrais($_SESSION['idVisiteurEtat'],$_SESSION['MoisEtat']) ;
-	$etatFiche = $infosFicheFrais['idEtat'];
-	$lesFraisForfait     = $pdo->getLesFraisForfait($_SESSION['idVisiteurEtat'], $_SESSION['MoisEtat']);
-	$lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($_SESSION['idVisiteurEtat'], $_SESSION['MoisEtat']);
-	$numAnnee =substr( $_SESSION['MoisEtat'],0,4);
-	$numMois =substr( $_SESSION['MoisEtat'],4,2);
-	$libEtat = $infosFicheFrais['libEtat'];
-	$montantValide = $infosFicheFrais['montantValide'];
-	$nbJustificatifs = $infosFicheFrais['nbJustificatifs'];
-	$dateModif =  $infosFicheFrais['dateModif'];
-	$dateModif =  dateAnglaisVersFrancais($dateModif);
-	$etatFiche = $infosFicheFrais['idEtat'];
-	include("vuesComptable/v_etatFraisComptable.php");
+	if (isset($_SESSION['idVisiteurEtat']) && isset($_SESSION['MoisEtat'])) {
+		$infosFicheFrais = $pdo->getLesInfosFicheFrais($_SESSION['idVisiteurEtat'],$_SESSION['MoisEtat']) ;
+		$etatFiche = $infosFicheFrais['idEtat'];
+		$lesFraisForfait     = $pdo->getLesFraisForfait($_SESSION['idVisiteurEtat'], $_SESSION['MoisEtat']);
+		$lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($_SESSION['idVisiteurEtat'], $_SESSION['MoisEtat']);
+		$numAnnee =substr( $_SESSION['MoisEtat'],0,4);
+		$numMois =substr( $_SESSION['MoisEtat'],4,2);
+		$libEtat = $infosFicheFrais['libEtat'];
+		$montantValide = $infosFicheFrais['montantValide'];
+		$nbJustificatifs = $infosFicheFrais['nbJustificatifs'];
+		$dateModif =  $infosFicheFrais['dateModif'];
+		$dateModif =  dateAnglaisVersFrancais($dateModif);
+		$etatFiche = $infosFicheFrais['idEtat'];
+		include("vuesComptable/v_etatFraisComptable.php");
 }
 ?>

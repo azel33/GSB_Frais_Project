@@ -1,7 +1,7 @@
 <!-- Vue pour afficher des visiteurs qui ont une fiche pour un mois donné -->
-
 <div id="contenu">
       <h2>Valider fiche de frais</h2>
+ 	  <h3>Selectionner un visiteur et un mois : </h3>
       <strong> Selectionner un visiteur et un mois : </strong>
 	  <form method="post" action="index.php?uc=validerFrais&action=selectionnerMois">
 	  <div class="corpsForm">

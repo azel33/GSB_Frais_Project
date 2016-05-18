@@ -6,7 +6,7 @@ if(!isset($_REQUEST['action'])){
 }
 $action = $_REQUEST['action'];
 
-// Selon les valeurs de $_REQUEST['action'] inclusion des différents vues
+// Selon les valeurs de $_REQUEST['action'] inclusion des diffï¿½rents vues
 	switch($action) {
 	
 		case 'selectionnerVisiteur' :
@@ -35,22 +35,22 @@ $action = $_REQUEST['action'];
 					}
 				}
 			}
-			// Condition si il n'y a pas de de visiteurs parmis le nom et prenom selectionné
-			// et que aucun mois n' a été sélectionné on retourne à la selection du visiteur.
+			// Condition si il n'y a pas de de visiteurs parmis le nom et prenom selectionnï¿½
+			// et que aucun mois n' a Ã©tÃ© sÃ©lectionnÃ© on retourne ï¿½ la selection du visiteur.
 			if (!isset($_SESSION['idVisiteur'])){
 				include("vuesComptable/v_listeVisiteurs.php");
 				ajouterErreur("Le visiteur selectionnÃ© n'exsite pas");
 				include("vues/v_erreurs.php");
 			}else{
 				$lesMois=$pdo->getLesMoisDisponibles($_SESSION['idVisiteur']);
-				// Afin de sélectionner par défaut le dernier mois dans la zone de liste
-				// on demande toutes les clés, et on prend la première,
-				// les mois étant triés décroissants
+				// Afin de sï¿½lectionner par dï¿½faut le dernier mois dans la zone de liste
+				// on demande toutes les clï¿½s, et on prend la premiï¿½re,
+				// les mois ï¿½tant triï¿½s dï¿½croissants
 				$lesCles = array_keys( $lesMois );
 				$moisASelectionner = $lesCles[0];
 				include("vuesComptable/v_listeMoisVisiteurs.php");
 				
-				// Récupération de(s) fiche(s) dispo pour un visiteur
+				// Rï¿½cupï¿½ration de(s) fiche(s) dispo pour un visiteur
 				if (isset($_POST['lstMois'])) {
 				 $_SESSION['Mois']= $_POST['lstMois'];
 				}
@@ -65,7 +65,7 @@ $action = $_REQUEST['action'];
 			$moisASelectionner = $lesCles[0];
 			include("vuesComptable/v_listeMoisVisiteurs.php");
 			
-			// Reçoit les valeurs mises à jours des frais forfaitisés
+			// Reï¿½oit les valeurs mises ï¿½ jours des frais forfaitisï¿½s
 			$lesFrais = $_POST['lesFrais'];
 			
 			if (lesQteFraisValides($lesFrais)) {
@@ -124,7 +124,7 @@ $action = $_REQUEST['action'];
 			}
 				// Montant total
 				$montantValide = $montantFF + $unFHMontant;
-				// Appel de la fonction changerEtatFiche qui met à jour aussi le montantValide
+				// Appel de la fonction changerEtatFiche qui met ï¿½ jour aussi le montantValide
 				$dateModif = dateJourAnglais($_SESSION['Mois']) ;
 				$pdo->majCompletEtatFiche($_SESSION['idVisiteur'], $_SESSION['Mois'], "VA", $montantValide, $dateModif);
 				
@@ -140,7 +140,7 @@ $action = $_REQUEST['action'];
 			include("vuesComptable/v_listeMoisVisiteurs.php");
 			$idFrais = $_REQUEST['idFrais'];
 			
-			// Permet d'obtenir le libelle du frais  à reporter
+			// Permet d'obtenir le libelle du frais  ï¿½ reporter
 			$lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($_SESSION['idVisiteur'],$_SESSION['Mois']) ;
 			// Met dans une variable ale mois initial choisi + 1
 			$moisAjout = ajoutMois($_SESSION['Mois']);
@@ -154,7 +154,7 @@ $action = $_REQUEST['action'];
 				$pdo-> creeNouvellesLignesFrais($_SESSION['idVisiteur'],$moisAjout);
 			}
 			
-		    //cree une nouvelle ligne de frais hors forfait avec les élèment de celle reporté.
+		    //cree une nouvelle ligne de frais hors forfait avec les ï¿½lï¿½ment de celle reportï¿½.
 			foreach( $lesFraisHorsForfait as $unFraisHorsForfait){
 			
 				$id = $unFraisHorsForfait['id'];
@@ -173,7 +173,7 @@ $action = $_REQUEST['action'];
 	
 	}
 	
-	// Récupération de la fiche  dispo pour un visiteur et un mois donné.
+	// Rï¿½cupï¿½ration de la fiche  dispo pour un visiteur et un mois donnï¿½.
 	if (isset($_SESSION['idVisiteur']) && isset($_SESSION['Mois'])) {
 		$infosFicheFrais = $pdo->getLesInfosFicheFrais($_SESSION['idVisiteur'],$_SESSION['Mois']) ;
 		$etatFiche = $infosFicheFrais['idEtat'];

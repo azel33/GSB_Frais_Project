@@ -1,4 +1,4 @@
-﻿<div id="contenu">
+<div id="contenu">
 <h3>Descriptif des Elements hors forfait</h3>
 <table class="listeLegere">
              <tr>
@@ -56,6 +56,3 @@
       </div>  
       </form>
 </div> 
-
-  
-

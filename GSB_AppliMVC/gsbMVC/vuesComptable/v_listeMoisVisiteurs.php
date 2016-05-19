@@ -1,8 +1,7 @@
-<!-- Vue pour afficher des visiteurs qui ont une fiche pour un mois donné -->
+<!-- Vue pour afficher des visiteurs qui ont une fiche pour un mois donnï¿½ -->
 <div id="contenu">
       <h2>Valider fiche de frais</h2>
  	  <h3>Selectionner un visiteur et un mois : </h3>
-      <strong> Selectionner un visiteur et un mois : </strong>
 	  <form method="post" action="index.php?uc=validerFrais&action=selectionnerMois">
 	  <div class="corpsForm">
 	  <!-- Listes des noms des visiteurs --> 
@@ -27,7 +26,7 @@
 	  		?>
 	   </select>
 	   
-	    <!-- Liste des prénoms des visiteurs --> 
+	    <!-- Liste des prï¿½noms des visiteurs --> 
       	<select name="prenomVisiteur" id="prenomVisiteur">
       	    <?php 
 	  			foreach ($lesNomsVisiteurs as $Visiteur)
@@ -55,7 +54,8 @@
     </form>
       
       <!-- Liste des mois pour lesquels un visiteur a une fiche de frais --> 
-	  <form method="post" action="index.php?uc=validerFrais&action=selectionnerMois">
+      
+	 <form method="post" action="index.php?uc=validerFrais&action=selectionnerMois">
 	  <div class="corpsForm">
 	  <p>
         <label for="lstMois" accesskey="n">Mois : </label>

@@ -6,20 +6,23 @@
  * @author Cheri Bibi
  * @version    1.0
  */
+
+
  /**
- * Teste si un quelconque visiteur est connecté
+ * Teste si un quelconque salarié est connecté
  * @return vrai ou faux 
  */
 function estConnecte(){
   return isset($_SESSION['idSalarie']);
 }
+
 /**
- * Enregistre dans une variable session les infos d'un visiteur
+ * Enregistre dans une variable session les infos d'un salalarié
  
- * @param $id 
- * @param $nom
- * @param $prenom
- * @param $profil
+ * @param string $id 
+ * @param string $nom
+ * @param string $prenom
+ * @param string $profil
  */
 function connecter($id,$nom,$prenom,$profil){
 	$_SESSION['idSalarie']= $id; 
@@ -27,12 +30,14 @@ function connecter($id,$nom,$prenom,$profil){
 	$_SESSION['prenom']= $prenom;
 	$_SESSION['profil'] = $profil;
 }
+
 /**
  * Détruit la session active
  */
 function deconnecter(){
 	session_destroy();
 }
+
 /**
  * Transforme une date au format français jj/mm/aaaa vers le format anglais aaaa-mm-jj
  
@@ -43,6 +48,7 @@ function dateFrancaisVersAnglais($maDate){
 	@list($jour,$mois,$annee) = explode('/',$maDate);
 	return date('Y-m-d',mktime(0,0,0,$mois,$jour,$annee));
 }
+
 /**
  * Transforme une date au format format anglais aaaa-mm-jj vers le format français jj/mm/aaaa 
  
@@ -68,6 +74,7 @@ function dateJourAnglais(){
 	$date="$jour"."-".$moisDate."-".$annee;
 	return $date;
 }
+
 /**
  * retourne le mois + 1 au format aaaamm
 
@@ -103,6 +110,7 @@ function getMois($date){
 }
 
 /* gestion des erreurs*/
+
 /**
  * Indique si une valeur est un entier positif ou nul
  
@@ -129,6 +137,7 @@ function estTableauEntiers($tabEntiers) {
 	}
 	return $ok;
 }
+
 /**
  * Vérifie si une date est inférieure d'un an à la date actuelle
  
@@ -143,6 +152,7 @@ function estDateDepassee($dateTestee){
 	@list($jourTeste,$moisTeste,$anneeTeste) = explode('/',$dateTestee);
 	return ($anneeTeste.$moisTeste.$jourTeste < $AnPasse); 
 }
+
 /**
  * Vérifie la validité du format d'une date française jj/mm/aaaa 
  
@@ -177,6 +187,7 @@ function estDateValide($date){
 function lesQteFraisValides($lesFrais){
 	return estTableauEntiers($lesFrais);
 }
+
 /**
  * Vérifie la validité des trois arguments : la date, le libellé du frais et le montant 
  
@@ -211,6 +222,7 @@ function valideInfosFrais($dateFrais,$libelle,$montant){
 			ajouterErreur("Le champ montant doit être numérique");
 		}
 }
+
 /**
  * Ajoute le libellé d'une erreur au tableau des erreurs 
  

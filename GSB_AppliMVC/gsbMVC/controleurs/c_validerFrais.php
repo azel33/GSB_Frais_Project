@@ -65,7 +65,7 @@ $action = $_REQUEST['action'];
 			$moisASelectionner = $lesCles[0];
 			include("vuesComptable/v_listeMoisVisiteurs.php");
 			
-			// Re�oit les valeurs mises � jours des frais forfaitis�s
+			// Reçoit les valeurs mises à jours des frais forfaitisés
 			$lesFrais = $_POST['lesFrais'];
 			
 			if (lesQteFraisValides($lesFrais)) {
@@ -98,15 +98,15 @@ $action = $_REQUEST['action'];
 				
 				// Verification de la taille du nouveau libelle
 				$nombreCaracter = strlen($libelleRefuse);
-				echo $nombreCaracter ;
 				if ($nombreCaracter > 100){
 					$libelleRefuse = substr($libelleRefuse,0,100);
 				}
-				$pdo->majLibelleFraisHorsForfait($idFrais,$libelleRefuse,$_SESSION['idVisiteur']);
+				$pdo->majLibelleFraisHorsForfait($idFrais,$libelleRefuse);
 				break;
 				
 		// Validation de la fiche de frais
 		case 'validerFiche' :
+			
 			$lesNomsVisiteurs =$pdo->getNomVisiteurs();
 			$lesMois=$pdo->getLesMoisDisponibles($_SESSION['idVisiteur']);
 			$lesCles = array_keys( $lesMois );
@@ -173,14 +173,13 @@ $action = $_REQUEST['action'];
 	
 	}
 	
-	// R�cup�ration de la fiche  dispo pour un visiteur et un mois donn�.
+	// Récupération des fiches  disponibles pour un visiteur et un mois donné.
 	if (isset($_SESSION['idVisiteur']) && isset($_SESSION['Mois'])) {
 		$infosFicheFrais = $pdo->getLesInfosFicheFrais($_SESSION['idVisiteur'],$_SESSION['Mois']) ;
 		$etatFiche = $infosFicheFrais['idEtat'];
 		$dateModif = $infosFicheFrais['dateModif'];
 		$lesFraisForfait     = $pdo->getLesFraisForfait($_SESSION['idVisiteur'], $_SESSION['Mois']);
 		$lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($_SESSION['idVisiteur'], $_SESSION['Mois']);
-		include("vuesComptable/v_listeFraisForfaitComptable.php");
-		include ("vuesComptable/v_listeFraisHorsForfaitComptable.php");
+		include("vuesComptable/v_listeFraisComptable.php");
 	}
 ?>

@@ -1,4 +1,4 @@
-<!-- vu de l'etat frais du comptable -->
+<!-- vu de l'etat frais du comptable lors de la sélection de suivre un fiche -->
 
 <div id="contenu">
 <h3>Fiche de frais du mois <?php echo $numMois."-".$numAnnee?> : 
